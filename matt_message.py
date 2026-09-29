@@ -10,232 +10,167 @@ st.set_page_config(
 )
 
 # -----------------------------
-# Custom Styling
-# -----------------------------
-st.markdown("""
-<style>
-    /* Main page */
-    .main {
-        max-width: 850px;
-        margin: auto;
-    }
-
-    /* Remove excessive top padding */
-    .block-container {
-        padding-top: 3rem;
-        padding-bottom: 4rem;
-    }
-
-    /* Typography */
-    h1 {
-        font-size: 2.7rem !important;
-        font-weight: 700 !important;
-        letter-spacing: -1px;
-        margin-bottom: 0.25rem;
-    }
-
-    h2 {
-        font-size: 1.45rem !important;
-        font-weight: 650 !important;
-        margin-top: 2.5rem !important;
-        margin-bottom: 0.8rem !important;
-    }
-
-    p, li {
-        font-size: 1.02rem;
-        line-height: 1.7;
-    }
-
-    /* Intro */
-    .subtitle {
-        color: #666;
-        font-size: 1.1rem;
-        margin-bottom: 2.5rem;
-    }
-
-    /* Highlight box */
-    .highlight {
-        background: #f7f4ef;
-        border-left: 4px solid #8b6f47;
-        padding: 1.2rem 1.4rem;
-        border-radius: 6px;
-        margin: 1.2rem 0;
-    }
-
-    /* Request cards */
-    .data-card {
-        background: #fafafa;
-        border: 1px solid #e8e8e8;
-        border-radius: 10px;
-        padding: 1rem 1.2rem;
-        margin: 0.7rem 0;
-    }
-
-    .data-title {
-        font-weight: 650;
-        font-size: 1.05rem;
-        margin-bottom: 0.35rem;
-    }
-
-    .data-description {
-        color: #666;
-        line-height: 1.5;
-    }
-
-    /* Footer */
-    .footer {
-        margin-top: 3rem;
-        padding-top: 1.5rem;
-        border-top: 1px solid #e5e5e5;
-        color: #777;
-        font-size: 0.9rem;
-        text-align: center;
-    }
-</style>
-""", unsafe_allow_html=True)
-
-
-# -----------------------------
 # Header
 # -----------------------------
-st.title("Our Project")
-st.markdown(
-    '<div class="subtitle">MKT 335 · Consumer Behavior Analysis</div>',
-    unsafe_allow_html=True
+st.title("MKT 335 Consumer Behavior Project")
+st.subheader("231 West Patisserie")
+
+st.write(
+    """
+    We are a student team conducting a consumer behavior analysis and
+    marketing project for 231 West Patisserie.
+    
+    Our goal is to better understand customer behavior and use what we learn
+    to develop useful marketing recommendations for the business.
+    """
+)
+
+# -----------------------------
+# Our Objective
+# -----------------------------
+st.header("Our Objective")
+
+st.write(
+    """
+    We want to better understand the customers of 231 West Patisserie,
+    including:
+    """
 )
 
 st.markdown("""
-We are a student team working on a consumer behavior analysis and marketing
-plan for **231 West Patisserie**. Our goal is to apply the concepts we have
-learned in class to a real business.
+- Customer demographics
+- Customer purchasing behavior
+- Customer lifestyles and characteristics
+- Patterns between customer characteristics and purchases
 """)
 
-# -----------------------------
-# Objective
-# -----------------------------
-st.header("What Is Our Objective?")
-
-st.write("""
-Our objective is to apply consumer behavior concepts to develop a marketing
-plan for 231 West Patisserie. To do this, we want to better understand your
-customers, including their demographics, lifestyles, and purchasing behavior.
-""")
-
-st.write("""
-Using the data we collect, we hope to build a profile of your target consumers
-and use our consumer behavior knowledge to develop effective marketing
-recommendations.
-""")
+st.write(
+    """
+    We will use this information to develop a consumer profile and create
+    marketing recommendations based on concepts from our MKT 335 course.
+    """
+)
 
 # -----------------------------
-# Data Collection
+# What Data We Need
 # -----------------------------
-st.header("How Will We Achieve Our Objective?")
+st.header("What Data We Need")
 
-st.write("""
-To build our marketing plan, we need data. We have identified three main
-sources of information:
-""")
+st.write(
+    """
+    To complete our project, we would like to collect information from
+    three main sources:
+    """
+)
 
-col1, col2, col3 = st.columns(3)
-
-with col1:
-    st.markdown("""
-    <div class="data-card">
-        <div class="data-title">Sales Data</div>
-        <div class="data-description">
-            Purchase and transaction information.
-        </div>
-    </div>
-    """, unsafe_allow_html=True)
-
-with col2:
-    st.markdown("""
-    <div class="data-card">
-        <div class="data-title">Customer Observations</div>
-        <div class="data-description">
-            General demographics and attire.
-        </div>
-    </div>
-    """, unsafe_allow_html=True)
-
-with col3:
-    st.markdown("""
-    <div class="data-card">
-        <div class="data-title">Social Media</div>
-        <div class="data-description">
-            Information about your audience and engagement.
-        </div>
-    </div>
-    """, unsafe_allow_html=True)
-
-st.write("""
-We have built an application that allows us to quickly enter observations
-into a dataset, making the collection process simple and efficient.
-""")
-
-# -----------------------------
-# What We Need
-# -----------------------------
-st.header("What We Need From You")
-
-st.write("We would like to collect sales data including:")
+st.subheader("1. Sales Data")
 
 st.markdown("""
-- **What was purchased**
-- **How much was spent**
-- **The date and time of the transaction**
-- **If available, information that can help us understand how many times a customer visited**
+- What was purchased
+- Amount spent
+- Date of the transaction
+- Time of the transaction
+- If available, information that helps us understand repeat visits
 """)
 
-st.write("""
-I will also sit in the store to collect general demographic observations,
-such as approximate age, gender, and attire.
-""")
-
-st.write("""
-Our application records the timestamp of each observation. Then, we
-can compare these timestamped demographics data with timestamped sales data to identify broader patterns
-between customer characteristics and purchasing behavior.
-""")
-
-# -----------------------------
-# Data Safety
-# -----------------------------
-st.header("How Will We Handle the Data?")
+st.subheader("2. Customer Observations")
 
 st.markdown("""
-<div class="highlight">
+We will make general observations while sitting in the store, such as:
 
-We understand that this information is sensitive. <strong>Our team will use
-the data only for this project and will handle it responsibly.</strong>
-
-We will not collect names, payment information, or other personally
-identifying information.
-
-</div>
-""", unsafe_allow_html=True)
-
-# -----------------------------
-# What They Receive
-# -----------------------------
-st.header("What Is In It For You?")
-
-st.write("""
-In exchange for allowing us to conduct this project, **We will provide an
-executive report to 231 West Patisserie at no monetary cost.**
+- Approximate age range
+- Gender presentation
+- General attire
+- Other broad, non-identifying characteristics
 """)
 
-st.write("""
-The report will summarize our findings and provide insights into your
-customers, purchasing patterns, and potential marketing opportunities.
-""")
+st.subheader("3. Social Media")
 
-# -----------------------------
-# Footer
-# -----------------------------
 st.markdown("""
-<div class="footer">
-    MKT 335 · Consumer Behavior Analysis
-</div>
-""", unsafe_allow_html=True)
+We may review publicly available information about the business's social
+media audience and engagement.
+""")
+
+# -----------------------------
+# How We Will Collect the Data
+# -----------------------------
+st.header("How We Will Collect the Data")
+
+st.write(
+    """
+    We have created a simple application that allows us to record observations
+    and organize them into a dataset.
+    
+    Each observation will include a timestamp. This allows us to compare
+    general customer observations with sales information from the same
+    period and identify broader purchasing patterns.
+    """
+)
+
+# -----------------------------
+# Privacy Commitment
+# -----------------------------
+st.header("Our Privacy Commitment")
+
+st.warning(
+    """
+    We will NOT collect names, credit card information, phone numbers,
+    email addresses, or other personally identifying information.
+    """
+)
+
+st.write(
+    """
+    The information we collect will be used only for our MKT 335 class
+    project and will be handled responsibly.
+    """
+)
+
+st.markdown("""
+**We will:**
+
+- Use the data only for this project
+- Avoid collecting personally identifying information
+- Keep our observations focused on broad patterns rather than individual customers
+- Use the information to create an overall analysis, not individual customer profiles
+""")
+
+# -----------------------------
+# What 231 West Patisserie Receives
+# -----------------------------
+st.header("What 231 West Patisserie Will Receive")
+
+st.write(
+    """
+    In exchange for allowing us to conduct this project, we will provide
+    231 West Patisserie with an executive report at no monetary cost.
+    """
+)
+
+st.write(
+    """
+    The report will summarize our findings and provide insights into:
+
+    - Customer characteristics
+    - Purchasing patterns
+    - Consumer behavior
+    - Potential marketing opportunities
+    """
+)
+
+# -----------------------------
+# Closing
+# -----------------------------
+st.header("Thank You")
+
+st.write(
+    """
+    We appreciate the opportunity to work with 231 West Patisserie.
+    Our goal is to make this project useful to the business while treating
+    customer information responsibly.
+    """
+)
+
+st.divider()
+
+st.caption("MKT 335 · Consumer Behavior Analysis")
