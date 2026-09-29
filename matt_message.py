@@ -1,4 +1,4 @@
-```python
+
 import streamlit as st
 
 # -----------------------------
@@ -180,7 +180,7 @@ st.markdown("""
     MKT 335 · Consumer Behavior Analysis
 </div>
 """, unsafe_allow_html=True)
-```
+
 
 
 st.divider()
