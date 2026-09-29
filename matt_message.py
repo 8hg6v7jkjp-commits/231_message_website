@@ -1,3 +1,4 @@
+```python
 import streamlit as st
 
 # -----------------------------
@@ -10,166 +11,177 @@ st.set_page_config(
 )
 
 # -----------------------------
+# Simple Styling
+# -----------------------------
+st.markdown("""
+<style>
+    .block-container {
+        max-width: 850px;
+        padding-top: 3rem;
+        padding-bottom: 4rem;
+    }
+
+    h1 {
+        font-size: 2.5rem !important;
+    }
+
+    h2 {
+        margin-top: 2rem !important;
+    }
+
+    p, li {
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+
+    .subtitle {
+        color: #666;
+        font-size: 1.1rem;
+        margin-bottom: 2rem;
+    }
+
+    .footer {
+        margin-top: 3rem;
+        padding-top: 1rem;
+        border-top: 1px solid #ddd;
+        color: #777;
+        text-align: center;
+    }
+</style>
+""", unsafe_allow_html=True)
+
+
+# -----------------------------
 # Header
 # -----------------------------
-st.title("MKT 335 Consumer Behavior Project")
-st.subheader("231 West Patisserie")
+st.title("Our Project")
 
-st.write(
-    """
-    We are a student team conducting a consumer behavior analysis and
-    marketing project for 231 West Patisserie.
-    
-    Our goal is to better understand customer behavior and use what we learn
-    to develop useful marketing recommendations for the business.
-    """
-)
-
-# -----------------------------
-# Our Objective
-# -----------------------------
-st.header("Our Objective")
-
-st.write(
-    """
-    We want to better understand the customers of 231 West Patisserie,
-    including:
-    """
+st.markdown(
+    '<div class="subtitle">MKT 335 · Consumer Behavior Analysis</div>',
+    unsafe_allow_html=True
 )
 
 st.markdown("""
-- Customer demographics
-- Customer purchasing behavior
-- Customer lifestyles and characteristics
-- Patterns between customer characteristics and purchases
+We are a student team working on a consumer behavior analysis and marketing
+plan for **231 West Patisserie**. Our goal is to apply the concepts we have
+learned in class to a real business.
 """)
 
-st.write(
-    """
-    We will use this information to develop a consumer profile and create
-    marketing recommendations based on concepts from our MKT 335 course.
-    """
-)
 
 # -----------------------------
-# What Data We Need
+# Objective
 # -----------------------------
-st.header("What Data We Need")
+st.header("What Is Our Objective?")
 
-st.write(
-    """
-    To complete our project, we would like to collect information from
-    three main sources:
-    """
-)
+st.write("""
+Our objective is to apply consumer behavior concepts to develop a marketing
+plan for 231 West Patisserie. To do this, we want to better understand your
+customers, including their demographics, lifestyles, and purchasing behavior.
+""")
 
-st.subheader("1. Sales Data")
+st.write("""
+Using the data we collect, we hope to build a profile of your target consumers
+and use our consumer behavior knowledge to develop effective marketing
+recommendations.
+""")
+
+
+# -----------------------------
+# Data Collection
+# -----------------------------
+st.header("How Will We Achieve Our Objective?")
+
+st.write("""
+To build our marketing plan, we need data. We have identified three main
+sources of information:
+""")
+
+st.subheader("Sales Data")
+
+st.write("Purchase and transaction information.")
+
+st.subheader("Customer Observations")
+
+st.write("General demographics and attire.")
+
+st.subheader("Social Media")
+
+st.write("Information about your audience and engagement.")
+
+st.write("""
+We have built an application that allows us to quickly enter observations
+into a dataset, making the collection process simple and efficient.
+""")
+
+
+# -----------------------------
+# What We Need
+# -----------------------------
+st.header("What We Need From You")
+
+st.write("We would like to collect sales data including:")
 
 st.markdown("""
-- What was purchased
-- Amount spent
-- Date of the transaction
-- Time of the transaction
-- If available, information that helps us understand repeat visits
+- **What was purchased**
+- **How much was spent**
+- **The date and time of the transaction**
+- **If available, information that can help us understand how many times a customer visited**
 """)
 
-st.subheader("2. Customer Observations")
+st.write("""
+I will also sit in the store to collect general demographic observations,
+such as approximate age, gender, and attire.
+""")
 
+st.write("""
+Our application records the timestamp of each observation. Then, we
+can compare these timestamped demographics data with timestamped sales data to identify broader patterns
+between customer characteristics and purchasing behavior.
+""")
+
+
+# -----------------------------
+# Data Safety
+# -----------------------------
+st.header("How Will We Handle the Data?")
+
+st.write("""
+We understand that this information is sensitive. **Our team will use
+the data only for this project and will handle it responsibly.**
+""")
+
+st.write("""
+We will not collect names, payment information, or other personally
+identifying information.
+""")
+
+
+# -----------------------------
+# What They Receive
+# -----------------------------
+st.header("What Is In It For You?")
+
+st.write("""
+In exchange for allowing us to conduct this project, **We will provide an
+executive report to 231 West Patisserie at no monetary cost.**
+""")
+
+st.write("""
+The report will summarize our findings and provide insights into your
+customers, purchasing patterns, and potential marketing opportunities.
+""")
+
+
+# -----------------------------
+# Footer
+# -----------------------------
 st.markdown("""
-We will make general observations while sitting in the store, such as:
+<div class="footer">
+    MKT 335 · Consumer Behavior Analysis
+</div>
+""", unsafe_allow_html=True)
+```
 
-- Approximate age range
-- Gender presentation
-- General attire
-- Other broad, non-identifying characteristics
-""")
-
-st.subheader("3. Social Media")
-
-st.markdown("""
-We may review publicly available information about the business's social
-media audience and engagement.
-""")
-
-# -----------------------------
-# How We Will Collect the Data
-# -----------------------------
-st.header("How We Will Collect the Data")
-
-st.write(
-    """
-    We have created a simple application that allows us to record observations
-    and organize them into a dataset.
-    
-    Each observation will include a timestamp. This allows us to compare
-    general customer observations with sales information from the same
-    period and identify broader purchasing patterns.
-    """
-)
-
-# -----------------------------
-# Privacy Commitment
-# -----------------------------
-st.header("Our Privacy Commitment")
-
-st.warning(
-    """
-    We will NOT collect names, credit card information, phone numbers,
-    email addresses, or other personally identifying information.
-    """
-)
-
-st.write(
-    """
-    The information we collect will be used only for our MKT 335 class
-    project and will be handled responsibly.
-    """
-)
-
-st.markdown("""
-**We will:**
-
-- Use the data only for this project
-- Avoid collecting personally identifying information
-- Keep our observations focused on broad patterns rather than individual customers
-- Use the information to create an overall analysis, not individual customer profiles
-""")
-
-# -----------------------------
-# What 231 West Patisserie Receives
-# -----------------------------
-st.header("What 231 West Patisserie Will Receive")
-
-st.write(
-    """
-    In exchange for allowing us to conduct this project, we will provide
-    231 West Patisserie with an executive report at no monetary cost.
-    """
-)
-
-st.write(
-    """
-    The report will summarize our findings and provide insights into:
-
-    - Customer characteristics
-    - Purchasing patterns
-    - Consumer behavior
-    - Potential marketing opportunities
-    """
-)
-
-# -----------------------------
-# Closing
-# -----------------------------
-st.header("Thank You")
-
-st.write(
-    """
-    We appreciate the opportunity to work with 231 West Patisserie.
-    Our goal is to make this project useful to the business while treating
-    customer information responsibly.
-    """
-)
 
 st.divider()
 
